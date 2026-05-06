@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Copy my Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:     #0f1f3d;
+      --muted:   #5a6a8a;
+      --accent:  #1e6bff;
+      --accent-2:#00d4b4;
+      --card:    #ffffff;
+      --line:    #d0daf0;
+      --bg:      #f0f4ff;
+      --bg-2:    #e4ecff;
+      --shadow:  rgba(30,107,255,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,212,180,0.12) 0%, transparent 70%);
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: clamp(48px, 8vw, 80px) 20px clamp(32px, 5vw, 56px);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px clamp(60px, 10vw, 100px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: linear-gradient(135deg, var(--accent), #1250cc);
+      border-radius: 20px;
+      padding: clamp(28px, 5vw, 40px);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 8px 32px rgba(30,107,255,0.25);
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .contact-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .contact-body p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 9px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .contact-btn:hover { opacity: 0.85; text-decoration: none; }
+
+    /* Section heading */
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 1px 8px var(--shadow);
+      overflow: hidden;
+    }
+
+    details[open] {
+      border-color: var(--accent);
+    }
+
+    summary {
+      padding: 18px 22px;
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--accent);
+      flex-shrink: 0;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '×';
+    }
+
+    .faq-body {
+      padding: 0 22px 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .faq-body a { color: var(--accent); font-weight: 500; }
+
+    /* Accent box */
+    .accent-box {
+      background: linear-gradient(135deg, rgba(30,107,255,0.06), rgba(0,212,180,0.06));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent-2);
+      border-radius: 16px;
+      padding: clamp(20px, 3vw, 28px);
+    }
+
+    .accent-box p { color: var(--muted); }
+    .accent-box a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .accent-box a:hover { text-decoration: underline; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a { color: var(--muted); font-weight: 500; }
+    footer .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      main { padding-left: 14px; padding-right: 14px; }
+      .contact-card { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Help Center</div>
+  <h1>Copy my Data<br>Support</h1>
+  <p class="subtitle">We're here to help you transfer anything, with zero resistance.</p>
+</header>
+
+<main>
+
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-body">
+      <h2>Get in Touch</h2>
+      <p>Can't find your answer below? Our team responds within 24–48 hours.</p>
+      <a href="mailto:gaminggeekstudio@gmail.com" class="contact-btn">gaminggeekstudio@gmail.com</a>
+    </div>
+  </div>
+
+  <div>
+    <p class="section-heading">Frequently Asked Questions</p>
+    <p class="section-sub">Find quick answers to the most common questions.</p>
+    <div class="faq-list">
+
+      <details>
+        <summary>How do I transfer my contacts, photos, or calendar?</summary>
+        <div class="faq-body">
+          Open Copy my Data on both devices and choose whether you're the sender or receiver. On the sender, tap the data types you'd like to transfer (Contacts, Photos, Videos, or Calendar Events), then select your transfer method — WiFi or Link. On WiFi, the app will discover the receiver automatically. Follow the on-screen pairing steps and your data will move directly from one device to the other.
+        </div>
+      </details>
+
+      <details>
+        <summary>Do both devices need to be on the same WiFi network?</summary>
+        <div class="faq-body">
+          For <strong>WiFi Transfer</strong>, yes — both devices must be connected to the same local WiFi network. The app uses Bonjour/mDNS to discover devices automatically, so no manual IP entry is needed.<br><br>If the devices are not on the same network, use <strong>Link Transfer</strong> instead. This generates a shareable link or QR code that allows the transfer to proceed via a temporary cloud relay without needing shared WiFi.
+        </div>
+      </details>
+
+      <details>
+        <summary>What is the 2 GB free transfer limit?</summary>
+        <div class="faq-body">
+          Free users can transfer up to <strong>2 GB of data</strong> in total. This quota is tracked securely on your device. Once the limit is reached, you'll need to upgrade to Copy my Data Pro to continue transferring. Your quota persists even if you delete and reinstall the app.<br><br>Pro subscribers have <strong>unlimited transfers</strong> with no quota restrictions.
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I upgrade to Copy my Data Pro?</summary>
+        <div class="faq-body">
+          Open the app and tap the <strong>Go Pro</strong> button in the Settings tab. Choose your preferred plan — Weekly ($4.99/week), Monthly ($17.99/month), or Lifetime ($70 one-time). All plans include a <strong>3-day free trial</strong> for the weekly and monthly options. Your purchase is processed securely through Apple's App Store.
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I cancel my subscription?</summary>
+        <div class="faq-body">
+          Subscriptions are managed by Apple, not by us directly. To cancel:<br><br>
+          1. Open the <strong>Settings</strong> app on your iPhone or iPad<br>
+          2. Tap your name at the top → <strong>Subscriptions</strong><br>
+          3. Find <strong>Copy my Data</strong> and tap <strong>Cancel Subscription</strong><br><br>
+          Cancel at least 24 hours before your renewal date to avoid being charged for the next period. The Lifetime plan is a one-time purchase and does not auto-renew.
+        </div>
+      </details>
+
+      <details>
+        <summary>My devices can't find each other — what do I do?</summary>
+        <div class="faq-body">
+          Try the following steps:<br><br>
+          • Make sure both devices are on the <strong>same WiFi network</strong> (not one on WiFi and one on cellular)<br>
+          • Check that you've granted the app <strong>Local Network permission</strong> in iOS Settings → Copy my Data<br>
+          • Disable and re-enable WiFi on both devices<br>
+          • Restart the app on both devices and try again<br>
+          • If your router has "Client Isolation" or "AP Isolation" enabled, device discovery will not work — contact your router's administrator or use Link Transfer as an alternative
+        </div>
+      </details>
+
+      <details>
+        <summary>Is my data safe during a transfer?</summary>
+        <div class="faq-body">
+          Yes. WiFi transfers are <strong>peer-to-peer</strong> — your data travels directly between devices on your local network and never passes through Gaming Geek Studio's servers. Link transfers use a temporary relay to connect devices across networks; data is not stored after the session ends.<br><br>The 4-digit OTP pairing code ensures only the intended device receives your data.
+        </div>
+      </details>
+
+      <details>
+        <summary>Does the app work without an internet connection?</summary>
+        <div class="faq-body">
+          <strong>WiFi Transfer</strong> works entirely on your local network — no internet connection is required. Both devices just need to be connected to the same WiFi router.<br><br><strong>Link Transfer</strong> requires an active internet connection on at least one device to establish the relay session.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I transfer data from iPhone to Android?</summary>
+        <div class="faq-body">
+          An Android companion app is currently in development as part of our roadmap. At this time, Copy my Data supports <strong>iPhone-to-iPhone</strong> and <strong>iPhone-to-iPad</strong> transfers.<br><br>Stay tuned for updates — Android support is coming soon. If you'd like to be notified when it launches, send us an email and we'll add you to the list.
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I request a refund?</summary>
+        <div class="faq-body">
+          All purchases are processed by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a>, sign in with your Apple ID, find the Copy my Data purchase, and submit a refund request. Apple typically processes requests within a few business days.<br><br>We are unable to issue refunds directly, as we do not handle payments.
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="accent-box">
+    <p><strong>Still need help?</strong></p>
+    <p style="margin-top:8px;">Email us at <a href="mailto:gaminggeekstudio@gmail.com">gaminggeekstudio@gmail.com</a> and we'll get back to you within 24–48 hours. Please include your iOS version and a short description of the issue for the fastest response.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy_policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="eula.html">EULA</a>
+  </div>
+  <p>&copy; 2025 Gaming Geek Studio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Copy my Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:     #0f1f3d;
+      --muted:   #5a6a8a;
+      --accent:  #1e6bff;
+      --accent-2:#00d4b4;
+      --card:    #ffffff;
+      --line:    #d0daf0;
+      --bg:      #f0f4ff;
+      --bg-2:    #e4ecff;
+      --shadow:  rgba(30,107,255,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,212,180,0.10) 0%, transparent 70%);
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: clamp(48px, 8vw, 80px) 20px clamp(32px, 5vw, 56px);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px clamp(60px, 10vw, 100px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(22px, 4vw, 32px) clamp(22px, 4vw, 36px);
+      box-shadow: 0 2px 16px var(--shadow);
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card ul li {
+      padding-left: 20px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .mini-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+
+    .mini-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .mini-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .sdk-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .sdk-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 18px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .sdk-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .sdk-item strong { color: var(--ink); font-weight: 600; font-size: 0.95rem; }
+    .sdk-item p { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
+
+    .accent-box {
+      background: linear-gradient(135deg, rgba(30,107,255,0.06), rgba(0,212,180,0.06));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent-2);
+      border-radius: 16px;
+      padding: clamp(20px, 3vw, 28px);
+    }
+
+    .accent-box p { color: var(--muted); }
+    .accent-box a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .accent-box a:hover { text-decoration: underline; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a { color: var(--muted); font-weight: 500; }
+    footer .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      main { padding-left: 14px; padding-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">We believe your data is yours. Here's exactly what we collect and why.</p>
+  <div class="pill">📅 Effective Date: May 6, 2025</div>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>1. Introduction</h2>
+    <p>Gaming Geek Studio ("we", "us", "our") built <strong>Copy my Data</strong> as a tool for transferring personal data between devices. This Privacy Policy explains what information we collect when you use the App, how we use it, and the choices you have.</p>
+    <p>By using Copy my Data, you agree to the collection and use of information in accordance with this policy. If you disagree with any part of this policy, please discontinue use of the App.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Information We Collect</h2>
+    <p>We collect limited, anonymous technical information to operate and improve the App:</p>
+    <ul>
+      <li><strong>Device information</strong> — Device model, iOS version, locale, and app version (collected anonymously via Firebase)</li>
+      <li><strong>Usage analytics</strong> — Events such as "transfer started", "transfer completed", and "subscription viewed" (no personally identifiable information is attached)</li>
+      <li><strong>Crash reports</strong> — Diagnostic data to help us fix bugs</li>
+      <li><strong>Push notification tokens</strong> — Device tokens via Firebase Cloud Messaging, used to deliver optional notifications</li>
+    </ul>
+    <p style="margin-top:12px;">We do <strong>not</strong> collect your name, email address, phone number, or any account credentials.</p>
+  </div>
+
+  <div class="card">
+    <h2>3. Data You Transfer</h2>
+    <p>Copy my Data facilitates the transfer of your personal data — contacts, photos, videos, and calendar events — between your devices. This data is <strong>processed entirely on your device</strong> and sent directly to your destination device.</p>
+    <div class="grid-2">
+      <div class="mini-card">
+        <h3>📡 WiFi Transfer</h3>
+        <p>Fully peer-to-peer over your local network using Bonjour/mDNS. Your data never touches our servers.</p>
+      </div>
+      <div class="mini-card">
+        <h3>🔗 Link Transfer</h3>
+        <p>Uses a temporary encrypted cloud relay when devices are not on the same network. Data is not stored after the session.</p>
+      </div>
+    </div>
+    <p style="margin-top:14px;">Gaming Geek Studio cannot access, read, or retain any of the personal data you transfer using the App.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Camera Use</h2>
+    <p>The App requests camera permission solely to scan QR codes for pairing devices. <strong>No photos or video are captured or stored</strong> by the App during this process. Camera frames are processed in real-time on your device and discarded immediately after a QR code is detected.</p>
+  </div>
+
+  <div class="card">
+    <h2>5. How We Use Information</h2>
+    <p>The limited anonymous information we collect is used to:</p>
+    <ul>
+      <li>Understand which features are most used and improve the App</li>
+      <li>Diagnose and fix crashes and performance issues</li>
+      <li>Deliver relevant push notifications (only if you grant permission)</li>
+      <li>Configure app behavior remotely via Firebase Remote Config (e.g., toggling promotional offers)</li>
+      <li>Validate and manage your in-app subscription via Adapty</li>
+    </ul>
+    <p style="margin-top:12px;">We do not sell, rent, or share your information with third parties for marketing purposes.</p>
+  </div>
+
+  <div class="card">
+    <h2>6. Third-Party SDKs</h2>
+    <p>The App uses the following third-party SDKs. Each operates under its own privacy policy:</p>
+    <div class="sdk-row">
+      <div class="sdk-item">
+        <div class="sdk-dot"></div>
+        <div>
+          <strong>Firebase Analytics &amp; Remote Config (Google LLC)</strong>
+          <p>Collects anonymous usage events and enables remote feature configuration. Data is processed by Google.</p>
+        </div>
+      </div>
+      <div class="sdk-item">
+        <div class="sdk-dot"></div>
+        <div>
+          <strong>Firebase Cloud Messaging (Google LLC)</strong>
+          <p>Manages push notification delivery using device tokens. No personal data is stored beyond the token.</p>
+        </div>
+      </div>
+      <div class="sdk-item">
+        <div class="sdk-dot" style="background: var(--accent-2);"></div>
+        <div>
+          <strong>Google AdMob (Google LLC)</strong>
+          <p>Serves ads to free-tier users. May use device identifiers to deliver interest-based ads. Disabled entirely for Pro subscribers.</p>
+        </div>
+      </div>
+      <div class="sdk-item">
+        <div class="sdk-dot" style="background: var(--accent-2);"></div>
+        <div>
+          <strong>Adapty</strong>
+          <p>Manages subscription status and validates App Store purchases. Handles purchase receipts securely.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>7. Advertising</h2>
+    <p>Free-tier users may see banner and app open advertisements served by Google AdMob. These ads may be personalized based on device identifiers and general usage patterns in accordance with Google's advertising policies.</p>
+    <p>Pro subscribers do not see any advertisements. You can upgrade to Pro at any time from within the App to remove ads.</p>
+  </div>
+
+  <div class="card">
+    <h2>8. Data Storage &amp; Security</h2>
+    <p>Your transfer quota is stored securely in the iOS Keychain with iCloud sync enabled. This ensures your quota persists across app reinstalls and is protected by your device's hardware security.</p>
+    <p>We implement industry-standard security practices to protect the limited data we do collect. However, no method of electronic storage or transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
+  </div>
+
+  <div class="card">
+    <h2>9. Children's Privacy</h2>
+    <p>Copy my Data is not directed at children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and believe your child has used the App in a way that provides us with personal information, please contact us and we will take steps to delete such information.</p>
+  </div>
+
+  <div class="card">
+    <h2>10. Your Rights</h2>
+    <p>Depending on your jurisdiction, you may have the right to access, correct, or delete personal information we hold about you. Since we collect only anonymous analytics data, there is typically no personally identifiable information to access or delete. For questions about your data rights, please contact us.</p>
+    <p>You can opt out of analytics collection by disabling analytics permissions in your device settings. You can opt out of personalized ads via Apple's App Tracking Transparency framework (Settings → Privacy → Tracking).</p>
+  </div>
+
+  <div class="card">
+    <h2>11. Changes to this Policy</h2>
+    <p>We may update this Privacy Policy periodically. We will notify you of material changes by updating the effective date at the top of this page. Your continued use of the App after changes are posted constitutes acceptance of the revised policy.</p>
+    <p>We encourage you to review this page periodically to stay informed about how we protect your information.</p>
+  </div>
+
+  <div class="accent-box">
+    <p><strong>Questions about your privacy?</strong></p>
+    <p style="margin-top:8px;">Reach us at <a href="mailto:gaminggeekstudio@gmail.com">gaminggeekstudio@gmail.com</a>. We take privacy seriously and will respond within a reasonable timeframe.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="eula.html">EULA</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>&copy; 2025 Gaming Geek Studio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

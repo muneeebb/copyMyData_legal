@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EULA — Copy my Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:     #0f1f3d;
+      --muted:   #5a6a8a;
+      --accent:  #1e6bff;
+      --accent-2:#00d4b4;
+      --card:    #ffffff;
+      --line:    #d0daf0;
+      --bg:      #f0f4ff;
+      --bg-2:    #e4ecff;
+      --shadow:  rgba(30,107,255,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,107,255,0.12) 0%, transparent 70%);
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: clamp(48px, 8vw, 80px) 20px clamp(32px, 5vw, 56px);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px clamp(60px, 10vw, 100px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(22px, 4vw, 32px) clamp(22px, 4vw, 36px);
+      box-shadow: 0 2px 16px var(--shadow);
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--bg-2);
+      border-radius: 50%;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card ul li {
+      padding-left: 20px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    .accent-box {
+      background: linear-gradient(135deg, rgba(30,107,255,0.06), rgba(0,212,180,0.06));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 16px;
+      padding: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 28px);
+    }
+
+    .accent-box p { color: var(--muted); }
+    .accent-box a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .accent-box a:hover { text-decoration: underline; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    footer .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      main { padding-left: 14px; padding-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Legal</div>
+  <h1>End User<br>License Agreement</h1>
+  <p class="subtitle">Please read this agreement carefully before using Copy my Data.</p>
+  <div class="pill">📅 Effective Date: May 6, 2025</div>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2><span class="num">1</span> Grant of License</h2>
+    <p>Gaming Geek Studio ("we", "us", "our") grants you a personal, non-exclusive, non-transferable, revocable license to download and use <strong>Copy my Data</strong> (the "App") on any Apple device you own or control, subject to the terms of this End User License Agreement ("EULA") and the Apple App Store Terms of Service.</p>
+    <p>This license is for personal, non-commercial use only. You may not sublicense, sell, resell, or otherwise transfer the App to any third party.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">2</span> Restrictions</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Copy, modify, or create derivative works based on the App</li>
+      <li>Reverse-engineer, disassemble, or decompile the App</li>
+      <li>Remove or alter any proprietary notices, labels, or marks</li>
+      <li>Use the App for any unlawful purpose or in violation of any applicable regulation</li>
+      <li>Use the App to transmit malware, spam, or any harmful content</li>
+      <li>Attempt to gain unauthorized access to another user's device or data</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">3</span> Subscriptions &amp; In-App Purchases</h2>
+    <p>Copy my Data offers optional premium subscriptions ("Copy my Data Pro") through Apple's App Store. Available plans include a <strong>Weekly</strong> plan, a <strong>Monthly</strong> plan, and a <strong>Lifetime</strong> one-time purchase. Weekly and Monthly plans include a free trial period. Current pricing is displayed at the time of purchase within the App.</p>
+    <p>Free trial subscriptions automatically convert to paid subscriptions unless cancelled at least 24 hours before the trial period ends. Payment is charged to your Apple ID account at confirmation of purchase.</p>
+    <p>Subscriptions automatically renew unless auto-renewal is turned off at least 24 hours before the current period ends. You can manage or cancel your subscription at any time in <strong>Settings → Apple ID → Subscriptions</strong> on your device.</p>
+    <p>Refunds are handled exclusively by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a>.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">4</span> Free Tier &amp; Transfer Quota</h2>
+    <p>Users without a Pro subscription may use the App for free subject to a <strong>2 GB transfer quota</strong> per session. Once this quota is reached, a Pro subscription is required to continue transferring data. The quota is tracked securely and persists across app reinstalls via iCloud Keychain.</p>
+    <p>We reserve the right to modify free tier limits at any time. Pro subscribers are not subject to transfer quotas.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">5</span> Data Access &amp; Privacy</h2>
+    <p>The App requests access to certain data on your device in order to perform transfers. Specifically:</p>
+    <ul>
+      <li><strong>Contacts</strong> — Read to compile and send your contact list to the destination device</li>
+      <li><strong>Photos &amp; Videos</strong> — Read to compile and transfer your selected media</li>
+      <li><strong>Calendar Events</strong> — Read to compile and transfer your calendar data</li>
+      <li><strong>Camera</strong> — Used solely to scan QR codes for device pairing; no images are stored</li>
+    </ul>
+    <p style="margin-top:12px;">WiFi transfers are peer-to-peer and remain entirely on your local network. Your personal data never passes through Gaming Geek Studio's servers during a WiFi transfer. Link-based transfers use a temporary cloud relay to facilitate the connection when devices are not on the same network. Please review our <a href="privacy_policy.html">Privacy Policy</a> for full details.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">6</span> Third-Party Services</h2>
+    <p>The App integrates the following third-party services, each governed by their own terms and privacy policies:</p>
+    <ul>
+      <li><strong>Firebase Analytics &amp; Remote Config</strong> (Google LLC) — anonymous usage analytics and feature configuration</li>
+      <li><strong>Firebase Cloud Messaging</strong> (Google LLC) — push notification delivery</li>
+      <li><strong>Google AdMob</strong> (Google LLC) — advertising shown to free-tier users</li>
+      <li><strong>Adapty</strong> — subscription management and in-app purchase validation</li>
+    </ul>
+    <p style="margin-top:12px;">We are not responsible for the practices or content of these third-party services. Your use of the App constitutes agreement to be bound by the applicable third-party terms.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">7</span> Advertisements</h2>
+    <p>The free tier of Copy my Data may display advertisements served by Google AdMob. Ads are suppressed entirely for Pro subscribers. We do not control the content of ads delivered by AdMob. By using the free tier you consent to the display of interest-based advertisements in accordance with Google's advertising policies.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">8</span> Disclaimer of Warranties</h2>
+    <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    <p>We do not warrant that the App will be error-free, uninterrupted, or free of viruses or other harmful components. We do not warrant that any specific features will be available at all times.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">9</span> Limitation of Liability</h2>
+    <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, GAMING GEEK STUDIO AND ITS OFFICERS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE APP, INCLUDING LOSS OF DATA, LOSS OF PROFITS, OR ANY OTHER LOSSES.</p>
+    <p>Our total cumulative liability for any claims relating to the App shall not exceed the amount you paid for the App in the twelve (12) months immediately preceding the claim.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">10</span> Termination</h2>
+    <p>This license is effective until terminated. It will terminate automatically if you fail to comply with any term of this EULA. Upon termination you must destroy all copies of the App in your possession.</p>
+    <p>We reserve the right to suspend or terminate access to the App at any time for any reason, including violations of this EULA, without prior notice.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">11</span> Governing Law</h2>
+    <p>This EULA is governed by and construed in accordance with applicable law. Any disputes arising from this EULA shall be resolved through binding arbitration or in the courts of competent jurisdiction.</p>
+    <p>If any provision of this EULA is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">12</span> Changes to this Agreement</h2>
+    <p>We may update this EULA from time to time. We will notify you of significant changes by updating the effective date at the top of this page. Continued use of the App after changes are posted constitutes your acceptance of the revised EULA. We encourage you to review this page periodically.</p>
+  </div>
+
+  <div class="accent-box">
+    <p><strong>Questions about this agreement?</strong></p>
+    <p style="margin-top:8px;">Contact Gaming Geek Studio at <a href="mailto:gaminggeekstudio@gmail.com">gaminggeekstudio@gmail.com</a> — we're happy to help clarify any terms.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy_policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>&copy; 2025 Gaming Geek Studio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
